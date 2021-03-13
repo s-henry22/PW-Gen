@@ -1,15 +1,26 @@
-// Generate password buttom
+// HTML document objects
+var elResult = document.getElementById('password');
+var elPasswordButton = document.getElementById('generate');
 
-var passwordButton = document.getElementById('generate'); // selecting the HTML document's button element.
+// Define global variables
+var lengthPromt; 
+var lowercase; 
+var upperCase; 
+var number; 
+var special;
 
-passwordButton.onclick = generatePassword; // add a listener event when user click's the button.
+// Generate password button prompt
+elPasswordButton.addEventListener('click', () => {
+    lengthPromt = window.prompt("Set password length: 8 - 128 characters");
+    lowercase = window.confirm("Do you want lowercase characters?");
+    upperCase = window.confirm("Do you want uppercase characters?");
+    number = window.confirm("Do you want to include numbers?");
+    special = window.confirm("Do you want special characters?");
+})
 
-function generatePassword() {
-    window.prompt("Hello");
-}
+
 
 // Password generator functions
-
 function randomLower () {
     return String.fromCharCode(Math.floor(Math.random() * 26 ) + 97);  // Returns a random lowercase letter.
 }
