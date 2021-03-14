@@ -60,12 +60,10 @@ function generatePassword(selections){
     }
     console.log('password', yourPassword)
     console.log(selections)
-    var finalPassword = yourPassword;
-    document.getElementById('password').innerHTML = finalPassword;
+    var finalPassword = yourPassword
+    var passwordDisplay = finalPassword.join(""); // Removes the commas in the password Array.
+    document.getElementById('password').innerHTML = passwordDisplay; //Displays password on HTML file.
 }
-
-// Display result of password in secure password container
-
 
 function getinfo (){
     lengthPrompt = parseInt(window.prompt("Set password length: 8 - 128 characters"));
